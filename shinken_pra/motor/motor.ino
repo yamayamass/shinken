@@ -1,8 +1,10 @@
 #define SWITCH 2
 #define OFF 0
 #define ON 1
-#define PIN_DC_MOTER1 5
-#define PIN_DC_MOTER2 6
+#define MOTER1_1 5
+#define MOTER1_2 6
+#define MOTER2_1 7
+#define MOTER2_2 8
 
 void setup() {
   // put your setup code here, to run once:
@@ -14,25 +16,46 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   Serial.print("Forward \n");
-  DCM_FORWARD();
+  DCM1_FORWARD();
+  DCM2_FORWARD();
 }
 
-void DCM_COAST() {
-	digitalWrite(PIN_DC_MOTER1, LOW);
-	digitalWrite(PIN_DC_MOTER2, LOW);
+void DCM1_COAST() {
+	digitalWrite(MOTER1_1, LOW);
+	digitalWrite(MOTER1_2, LOW);
 }
 
-void DCM_FORWARD() {
-	digitalWrite(PIN_DC_MOTER1, HIGH);
-	digitalWrite(PIN_DC_MOTER2, LOW);
+void DCM1_FORWARD() {
+	digitalWrite(MOTER1_1, HIGH);
+	digitalWrite(MOTER1_2, LOW);
 }
 
-void DCM_REVERSE() {
-	digitalWrite(PIN_DC_MOTER1, LOW);
-	digitalWrite(PIN_DC_MOTER2, HIGH);
+void DCM1_REVERSE() {
+	digitalWrite(MOTER1_1, LOW);
+	digitalWrite(MOTER1_2, HIGH);
 }
 
-void DCM_BRAKE() {
-	digitalWrite(PIN_DC_MOTER1, HIGH);
-	digitalWrite(PIN_DC_MOTER2, HIGH);
+void DCM1_BRAKE() {
+	digitalWrite(MOTER1_1, HIGH);
+	digitalWrite(MOTER1_2, HIGH);
+}
+
+void DCM2_COAST() {
+	digitalWrite(MOTER2_1, LOW);
+	digitalWrite(MOTER2_2, LOW);
+}
+
+void DCM2_FORWARD() {
+	digitalWrite(MOTER2_1, HIGH);
+	digitalWrite(MOTER2_2, LOW);
+}
+
+void DCM2_REVERSE() {
+	digitalWrite(MOTER2_1, LOW);
+	digitalWrite(MOTER2_2, HIGH);
+}
+
+void DCM2_BRAKE() {
+	digitalWrite(MOTER2_1, HIGH);
+	digitalWrite(MOTER2_2, HIGH);
 }
