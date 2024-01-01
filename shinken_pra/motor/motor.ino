@@ -1,3 +1,20 @@
+/**
+   Hardware Connections:
+    Arduino | drv8835
+    -------------------
+      5V    |   VCC
+      GND   |   MODE
+      5     |   AIN1
+      6     |   AIN2
+      7     |   BIN1
+      8     |   BIN2
+      motor |   AOUT1
+      motor |   AOUT2
+      motor |   BOUT1
+      motor |   BOUT2
+      GND   |   GND
+*/
+
 #define SWITCH 2
 #define OFF 0
 #define ON 1
