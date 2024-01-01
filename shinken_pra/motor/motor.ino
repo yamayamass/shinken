@@ -15,7 +15,7 @@
       GND   |   GND
 */
 
-#define SWITCH 2
+#define SWITCH 4
 #define OFF 0
 #define ON 1
 #define MOTER1_1 5
