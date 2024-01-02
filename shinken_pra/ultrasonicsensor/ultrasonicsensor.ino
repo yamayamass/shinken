@@ -22,8 +22,11 @@
 */
 
 // Pins
-const int TRIG_PIN = 7;
-const int ECHO_PIN = 8;
+#define SWITCH 4
+#define OFF 0
+#define ON 1
+#define TRIG_PIN 9
+#define ECHO_PIN 10
 
 // Anything over 400 cm (23200 us pulse) is "out of range"
 const unsigned int MAX_DIST = 23200;
@@ -40,6 +43,9 @@ void setup() {
 
   // We'll use the serial monitor to view the sensor output
   Serial.begin(9600);
+
+  //スイッチが押されるまで待機
+  while(digitalRead(SWITCH)==0);
 }
 
 void loop() {
