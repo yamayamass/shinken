@@ -26,7 +26,11 @@
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+
+  //割り込み関数の例(今回は使用していない)
   //attachInterrupt(digitalPinToInterrupt(SWITCH), condition, RISING);
+
+  //スイッチが押されるまで待機
   while(digitalRead(SWITCH)==0);
 }
 
