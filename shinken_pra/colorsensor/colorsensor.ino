@@ -1,4 +1,20 @@
-#define SWITCH 2
+/**
+  https://spiceman.jp/arduino-s11059-program/#index_id3
+  参照
+   Hardware Connections:
+    Arduino | module  | sensor
+    -------------------
+      3.3V  |   VREF1 |  +V
+      5V    |   VREF2 |
+            |   SCL1  |  SCL
+      SCL   |   SCL2  |
+            |   SDA1  |  SDA
+      SDA   |   SDA2  |
+            |   VPU   |
+      GND   |   GND   |  GND
+*/
+
+#define SWITCH 4
 #define OFF 0
 #define ON 1
 #include <Wire.h>
@@ -68,4 +84,5 @@ void getvalue_from_colorsensor() {
 
 void loop() {
   getvalue_from_colorsensor();
+  delay(1000);
 }
