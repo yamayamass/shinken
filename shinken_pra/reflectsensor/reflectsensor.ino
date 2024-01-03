@@ -1,23 +1,32 @@
 /**
+
+  https://deviceplus.jp/arduino/entry015/
+  センサーの足の1~4の番号の割り振りはこれに従う
    Hardware Connections:
-    Arduino | RPR-220
+    Arduino | RPR-220_1
     -------------------
-      5V    |   VCC
-      GND   |   MODE
-      5     |   AIN1
-      6     |   AIN2
-      7     |   BIN1
-      8     |   BIN2
-      motor |   AOUT1
-      motor |   AOUT2
-      motor |   BOUT1
-      motor |   BOUT2
-      GND   |   GND
+      5V,A1 |   1
+      GND   |   2
+      GND   |   3
+      5V    |   4
+
+    Arduino | RPR-220_2
+    -------------------
+      5V,A2 |   1
+      GND   |   2
+      GND   |   3
+      5V    |   4
 */
 
 #define SWITCH 4
 #define OFF 0
 #define ON 1
+#define R_sen1 1
+#define R_sen2 2
+
+//センサーの抵抗値を読み取って保存する変数
+int val_1;
+int val_2;
 
 void setup() {
   // put your setup code here, to run once:
@@ -33,5 +42,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  val_1 = analogRead(R_sen1);
+  val_2 = analogRead(R_sen2);
+  Serial.println(val_1);
+  Serial.println(val_2);
+  delay(1000);
 }
